@@ -4,9 +4,9 @@
 //
 //  Created by Валентин Коскин on 22.09.2022.
 //
-
 import UIKit
 
+/// Главный ViewController
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -14,6 +14,4 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
 }
-
