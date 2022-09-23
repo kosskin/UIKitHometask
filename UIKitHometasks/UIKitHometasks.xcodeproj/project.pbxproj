@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BBACB23C28DD82910090288A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACB23B28DD82910090288A /* LoginViewController.swift */; };
+		BBACB24028DD864F0090288A /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACB23F28DD864F0090288A /* OrderViewController.swift */; };
+		BBACB24428DD8C030090288A /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACB24328DD8C030090288A /* BillViewController.swift */; };
 		BBD6075728DC7BD20047378A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075628DC7BD20047378A /* AppDelegate.swift */; };
 		BBD6075928DC7BD20047378A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075828DC7BD20047378A /* SceneDelegate.swift */; };
 		BBD6075B28DC7BD20047378A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075A28DC7BD20047378A /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BBACB23B28DD82910090288A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BBACB23F28DD864F0090288A /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		BBACB24328DD8C030090288A /* BillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		BBD6075328DC7BD20047378A /* UIKitHometasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHometasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD6075628DC7BD20047378A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBD6075828DC7BD20047378A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +43,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BBACB23A28DD81F70090288A /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BBACB23B28DD82910090288A /* LoginViewController.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		BBACB23E28DD862A0090288A /* OrderScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BBACB23F28DD864F0090288A /* OrderViewController.swift */,
+			);
+			path = OrderScreen;
+			sourceTree = "<group>";
+		};
+		BBACB24228DD8BEE0090288A /* BillScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BBACB24328DD8C030090288A /* BillViewController.swift */,
+			);
+			path = BillScreen;
+			sourceTree = "<group>";
+		};
 		BBD6074A28DC7BD20047378A = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +88,12 @@
 			children = (
 				BBD6075628DC7BD20047378A /* AppDelegate.swift */,
 				BBD6075828DC7BD20047378A /* SceneDelegate.swift */,
+				BBACB23A28DD81F70090288A /* LoginScreen */,
 				BBD6075A28DC7BD20047378A /* ViewController.swift */,
+				BBACB23E28DD862A0090288A /* OrderScreen */,
 				BBD6075C28DC7BD20047378A /* Main.storyboard */,
 				BBD6075F28DC7BD40047378A /* Assets.xcassets */,
+				BBACB24228DD8BEE0090288A /* BillScreen */,
 				BBD6076128DC7BD40047378A /* LaunchScreen.storyboard */,
 				BBD6076428DC7BD40047378A /* Info.plist */,
 			);
@@ -159,9 +192,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBACB23C28DD82910090288A /* LoginViewController.swift in Sources */,
+				BBACB24028DD864F0090288A /* OrderViewController.swift in Sources */,
 				BBD6075B28DC7BD20047378A /* ViewController.swift in Sources */,
 				BBD6075728DC7BD20047378A /* AppDelegate.swift in Sources */,
 				BBD6075928DC7BD20047378A /* SceneDelegate.swift in Sources */,
+				BBACB24428DD8C030090288A /* BillViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
