@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Счёт - третий экран приложения
+/// BillViewController - экран со счетом
 class BillViewController: UIViewController {
 
     let firstFoodTextField: UITextField = {

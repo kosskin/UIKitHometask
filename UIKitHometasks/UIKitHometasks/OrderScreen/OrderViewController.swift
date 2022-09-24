@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// класс второго экрана
+/// ViewController экрана с характеристиками заказа
 class OrderViewController: UIViewController {
 
     private let nameLabel: UILabel = {
@@ -69,7 +69,7 @@ class OrderViewController: UIViewController {
     let bookedTableSwitch: UISwitch = {
         let switchBook = UISwitch()
         switchBook.translatesAutoresizingMaskIntoConstraints = false
-        switchBook.addTarget(self, action: #selector(switchTouch(sender:)), for: .valueChanged)
+        switchBook.addTarget(self, action: #selector(switchAction(sender:)), for: .valueChanged)
         return switchBook
     }()
     
@@ -84,7 +84,7 @@ class OrderViewController: UIViewController {
     let payMoneySwitch: UISwitch = {
         let switchMoney = UISwitch()
         switchMoney.translatesAutoresizingMaskIntoConstraints = false
-        switchMoney.addTarget(self, action: #selector(switchTouch(sender:)), for: .valueChanged)
+        switchMoney.addTarget(self, action: #selector(switchAction(sender:)), for: .valueChanged)
         return switchMoney
     }()
     
@@ -99,7 +99,7 @@ class OrderViewController: UIViewController {
     let vipRoomSwitch: UISwitch = {
         let switchRoom = UISwitch()
         switchRoom.translatesAutoresizingMaskIntoConstraints = false
-        switchRoom.addTarget(self, action: #selector(switchTouch(sender:)), for: .valueChanged)
+        switchRoom.addTarget(self, action: #selector(switchAction(sender:)), for: .valueChanged)
         return switchRoom
     }()
     
@@ -109,7 +109,7 @@ class OrderViewController: UIViewController {
         button.setTitle("Выставить счет", for: .normal)
         button.backgroundColor = UIColor.systemPink
         button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(getBillButtonTouch), for: .touchUpInside)
+        button.addTarget(self, action: #selector(getBillButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -144,24 +144,6 @@ class OrderViewController: UIViewController {
         view.alignment = .leading
         return view
     }()
-    
-    var getName: String? {
-        return nameTextField.text
-    }
-    
-    var getAmountGuests: Int? {
-        guard let guests = Int("\(String(describing: amountGuestsTextField.text))") else {
-            return nil
-        }
-        return guests
-    }
-    
-    var getNumberTable: Int? {
-        guard let tables = Int("\(String(describing: numberTableTextField.text))") else {
-            return nil
-        }
-        return tables
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -219,24 +201,16 @@ class OrderViewController: UIViewController {
 
     }
     
-    @objc func getBillButtonTouch() {
+    @objc func getBillButtonAction() {
         let nextVC = BillViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
         }
     
-    @objc func switchTouch(sender: UISwitch) {
+    @objc func switchAction(sender: UISwitch) {
         if sender.isOn {
-            sender.isOn = false
+            print("on")
         } else {
-            sender.isOn = true
+            print("off")
         }
     }
-    
-    func showAlert(message: String) {
-        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Хорошо", style: .default, handler: nil)
-        alertController.addAction(action)
-        self.present(alertController, animated: true, completion: nil)
-    }
-
 }
