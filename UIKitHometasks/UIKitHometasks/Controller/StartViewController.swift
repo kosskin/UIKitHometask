@@ -6,15 +6,16 @@
 //
 import UIKit
 
-/// Главный ViewController
-class ViewController: UIViewController {
+/// ViewController  с кнопкой Start
+class StartViewController: UIViewController {
 
     private lazy var mainLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .lightGray
-        label.textColor = .green
-        label.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        label.center = CGPoint(x: 300, y: 300)
+        label.backgroundColor = .red
+        label.textColor = .white
+        label.frame = CGRect(x: 0, y: 200, width: 100, height: 100)
+        label.center = CGPoint(x: 205, y: 300)
+        label.textAlignment = .center
         return label
     }()
     
@@ -22,13 +23,13 @@ class ViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .red
         button.setTitle("START", for: .normal)
-        button.addTarget(self, action: #selector(getAlert), for: .touchUpInside)
+        button.addTarget(self, action: #selector(transformToHelloAlert), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
         button.center = self.view.center
         return button
     }()
     
-    var modelHello = HelloModel()
+    let storage = Storage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,17 +37,17 @@ class ViewController: UIViewController {
         view.addSubview(mainLabel)
     }
     
-    @objc func getAlert() {
+    @objc func transformToHelloAlert() {
         let alertController = UIAlertController(title: "", message: "message", preferredStyle: .alert)
-        let action = UIAlertAction(title: "ok", style: .default) { _ in
+        let alertAction = UIAlertAction(title: "ok", style: .default) { _ in
             guard let inputText = alertController.textFields?.first?.text else {
                 return
             }
-            self.mainLabel.text = self.modelHello.toHello(message: inputText)
+            self.mainLabel.text = self.storage.toHello(message: inputText)
         }
         alertController.addTextField { _ in
         }
-        alertController.addAction(action)
-        self.present(alertController, animated: true, completion: nil)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
