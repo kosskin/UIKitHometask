@@ -50,11 +50,9 @@ class GameChoiceViewController: UIViewController {
     
     func alertSum(title: String, message: String, style: UIAlertController.Style) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
-        alertController.addTextField { _ in
-        }
-        
-        alertController.addTextField { _ in
-        }
+        alertController.addTextField()
+    
+        alertController.addTextField()
         
         let alertAction = UIAlertAction(title: "Считай!", style: .default) { _ in
             let firstNumber = Int(alertController.textFields?[0].text ?? "0")
