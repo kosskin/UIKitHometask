@@ -111,11 +111,17 @@ class BirthdayListViewController: UIViewController {
         imageView.tintColor = .gray
         return imageView
     }()
+    
+//    private let plusButtonItem: UIBarButtonItem = {
+//        let buttomItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(pushNewView))
+//        return buttomItem
+//    }()
         
     override func viewDidLoad() {
         super.viewDidLoad()
         configuUI()
-
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                            target: self, action: #selector(pushNewView))
     }
     
     func configuUI() {
@@ -133,12 +139,9 @@ class BirthdayListViewController: UIViewController {
         view.addSubview(jonyDaysLabel)
         view.addSubview(jonyImage)
     }
-    
-//    func plusButtonAdd() {
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(<#T##@objc method#>))
-//    }
-//
+
     @objc func pushNewView() {
-        
+        let nextViewController = AddingFriendViewController()
+        present(nextViewController, animated: true, completion: nil)
     }
 }
