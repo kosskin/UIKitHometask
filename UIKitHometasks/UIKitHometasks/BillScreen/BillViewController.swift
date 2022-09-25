@@ -54,7 +54,7 @@ class BillViewController: UIViewController {
     }
     
     func configureUI() {
-        self.view.backgroundColor = .white
+        view.backgroundColor = .white
         view.addSubview(firstFoodTextField)
         view.addSubview(firstFoodLabel)
         view.addSubview(secondFoodTextField)

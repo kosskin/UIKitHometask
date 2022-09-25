@@ -203,14 +203,14 @@ class OrderViewController: UIViewController {
     
     @objc func getBillButtonAction() {
         let nextVC = BillViewController()
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        navigationController?.pushViewController(nextVC, animated: true)
         }
     
     @objc func switchAction(sender: UISwitch) {
-        if sender.isOn {
-            print("on")
-        } else {
+        guard sender.isOn else {
             print("off")
+            return
         }
+        print("on")
     }
 }

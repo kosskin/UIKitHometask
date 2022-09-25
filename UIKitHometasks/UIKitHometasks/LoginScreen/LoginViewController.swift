@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
         enterButton.setTitle("Войти", for: .normal)
         enterButton.backgroundColor = UIColor.systemPink
         enterButton.setTitleColor(.white, for: .normal)
-        enterButton.addTarget(self, action: #selector(loginButtonTouch), for: .touchUpInside)
+        enterButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
         return enterButton
     }()
     
@@ -115,9 +115,9 @@ class LoginViewController: UIViewController {
         enterButton.topAnchor.constraint(equalTo: namePasswordStackView.bottomAnchor, constant: 76).isActive = true
     }
     
-    @objc func loginButtonTouch() {
+    @objc func loginButtonAction() {
         let nextVC = OrderViewController()
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        navigationController?.pushViewController(nextVC, animated: true)
     }
 
 }
