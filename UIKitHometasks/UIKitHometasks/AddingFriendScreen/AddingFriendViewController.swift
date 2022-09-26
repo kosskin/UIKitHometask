@@ -142,12 +142,6 @@ class AddingFriendViewController: UIViewController {
         return textField
     }()
     
-    let instagramAlert: UIAlertController = {
-        let alert = UIAlertController()
-        
-        return alert
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -180,32 +174,37 @@ class AddingFriendViewController: UIViewController {
         sexTextField.inputView = selectSexPicker
         selectSexPicker.dataSource = self
         selectSexPicker.delegate = self
-        
     }
     
     func createToolBar() -> UIToolbar {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneButtonAction))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                         target: nil, action: #selector(datePickerDoneAction))
         toolbar.setItems([doneButton], animated: true)
         return toolbar
     }
     
-    @objc func doneButtonAction() {
-        dateTextField.text = "\(datePicker.date)"
+    @objc func datePickerDoneAction() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy HH:mm"
+        dateTextField.text = formatter.string(from: datePicker.date)
         view.endEditing(true)
     }
     
     @objc func getAlertInstagram() {
         let alertController = UIAlertController(title: "Введите username Instagram",
                                                 message: "", preferredStyle: .alert)
-        let alertActionOk = UIAlertAction(title: "Ok",
-                                        style: .default, handler: nil)
+        let alertActionOk = UIAlertAction(title: "ok", style: .default) { _ in
+            let text = alertController.textFields?.first?.text
+            self.instagramTextField.text = text
+        }
         let alertActionCancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         alertController.addAction(alertActionOk)
         alertController.addAction(alertActionCancel)
         alertController.addTextField(configurationHandler: nil)
+        instagramTextField.text = alertController.textFields?[0].text
         self.present(alertController, animated: true, completion: nil)
     }
     

@@ -43,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB2A14A328E17FF2007F09EB /* SignInScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BBD6075A28DC7BD20047378A /* SignInViewController.swift */,
+			);
+			path = SignInScreen;
+			sourceTree = "<group>";
+		};
+		BB2A14A428E18002007F09EB /* BirthdayListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BB3F28B128DF52EB00BFFE1E /* BirthdayListViewController.swift */,
+			);
+			path = BirthdayListScreen;
+			sourceTree = "<group>";
+		};
 		BB33F31228E0C1390081015E /* AddingFriendScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,8 +89,8 @@
 			children = (
 				BBD6075628DC7BD20047378A /* AppDelegate.swift */,
 				BBD6075828DC7BD20047378A /* SceneDelegate.swift */,
-				BBD6075A28DC7BD20047378A /* SignInViewController.swift */,
-				BB3F28B128DF52EB00BFFE1E /* BirthdayListViewController.swift */,
+				BB2A14A428E18002007F09EB /* BirthdayListScreen */,
+				BB2A14A328E17FF2007F09EB /* SignInScreen */,
 				BB33F31228E0C1390081015E /* AddingFriendScreen */,
 				BBD6075F28DC7BD40047378A /* Assets.xcassets */,
 				BB33F30B28E0BB550081015E /* Main.storyboard */,
