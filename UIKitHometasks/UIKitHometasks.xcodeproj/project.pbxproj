@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB3DC03A28E1C11900095A6B /* SongInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DC03928E1C11900095A6B /* SongInformationViewController.swift */; };
+		BB3DC03D28E2210100095A6B /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3DC03C28E2210100095A6B /* Song.swift */; };
+		BB3DC04028E2275F00095A6B /* patron.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB3DC03F28E2275F00095A6B /* patron.mp3 */; };
+		BB3DC04328E2278200095A6B /* org.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB3DC04228E2278200095A6B /* org.mp3 */; };
 		BBD6075728DC7BD20047378A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075628DC7BD20047378A /* AppDelegate.swift */; };
 		BBD6075928DC7BD20047378A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075828DC7BD20047378A /* SceneDelegate.swift */; };
 		BBD6075B28DC7BD20047378A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075A28DC7BD20047378A /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB3DC03928E1C11900095A6B /* SongInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInformationViewController.swift; sourceTree = "<group>"; };
+		BB3DC03C28E2210100095A6B /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		BB3DC03F28E2275F00095A6B /* patron.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = patron.mp3; sourceTree = "<group>"; };
+		BB3DC04228E2278200095A6B /* org.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = org.mp3; sourceTree = "<group>"; };
 		BBD6075328DC7BD20047378A /* UIKitHometasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHometasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD6075628DC7BD20047378A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBD6075828DC7BD20047378A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +68,10 @@
 				BBD6075828DC7BD20047378A /* SceneDelegate.swift */,
 				BBD6075A28DC7BD20047378A /* ViewController.swift */,
 				BBD6075C28DC7BD20047378A /* Main.storyboard */,
+				BB3DC03C28E2210100095A6B /* Song.swift */,
+				BB3DC03928E1C11900095A6B /* SongInformationViewController.swift */,
+				BB3DC04228E2278200095A6B /* org.mp3 */,
+				BB3DC03F28E2275F00095A6B /* patron.mp3 */,
 				BBD6075F28DC7BD40047378A /* Assets.xcassets */,
 				BBD6076128DC7BD40047378A /* LaunchScreen.storyboard */,
 				BBD6076428DC7BD40047378A /* Info.plist */,
@@ -125,6 +137,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3DC04028E2275F00095A6B /* patron.mp3 in Resources */,
+				BB3DC04328E2278200095A6B /* org.mp3 in Resources */,
 				BBD6076328DC7BD40047378A /* LaunchScreen.storyboard in Resources */,
 				BBD6076028DC7BD40047378A /* Assets.xcassets in Resources */,
 				BBD6075E28DC7BD20047378A /* Main.storyboard in Resources */,
@@ -161,7 +175,9 @@
 			files = (
 				BBD6075B28DC7BD20047378A /* ViewController.swift in Sources */,
 				BBD6075728DC7BD20047378A /* AppDelegate.swift in Sources */,
+				BB3DC03A28E1C11900095A6B /* SongInformationViewController.swift in Sources */,
 				BBD6075928DC7BD20047378A /* SceneDelegate.swift in Sources */,
+				BB3DC03D28E2210100095A6B /* Song.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
