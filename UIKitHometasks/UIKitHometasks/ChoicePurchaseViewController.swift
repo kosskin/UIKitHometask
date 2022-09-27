@@ -50,7 +50,7 @@ class ChoicePurchaseViewController: UIViewController {
         monetPointImageView.image = imagesSegmentArray[0]
         choicePurchaseSegmentControl = UISegmentedControl(items: menuSegmentArray)
         choicePurchaseSegmentControl.frame = CGRect(x: 60, y: 300, width: 300, height: 30)
-        choicePurchaseSegmentControl.addTarget(self, action: #selector(changeSegmentValue(target:)), for: .valueChanged)
+        choicePurchaseSegmentControl.addTarget(self, action: #selector(changeSegmentValueAction(target:)), for: .valueChanged)
         amountMoneyPicker.delegate = self
         amountMoneyPicker.dataSource = self
         confingUI()
@@ -66,7 +66,7 @@ class ChoicePurchaseViewController: UIViewController {
         view.addSubview(enterButton)
     }
     
-    @objc func changeSegmentValue(target: UISegmentedControl) {
+    @objc func changeSegmentValueAction(target: UISegmentedControl) {
         if target == choicePurchaseSegmentControl {
             let segmentIndex = target.selectedSegmentIndex
             monetPointImageView.image = imagesSegmentArray[segmentIndex]
