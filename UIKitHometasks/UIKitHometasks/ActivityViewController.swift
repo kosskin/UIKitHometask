@@ -8,19 +8,21 @@ import UIKit
 
 /// ViewController  c использованием UIActivityViewController
 class ActivityViewController: UIViewController {
-    
+    // MARK: Outlets
     @IBOutlet private weak var buttonToOpenActivityVC: UIButton!
     @IBOutlet private weak var spanchImageView: UIImageView!
     @IBOutlet private weak var spanchButton: UIButton!
     
     private var activityViewController: UIActivityViewController?
     private var itemsArray = ["One", "Two", "Three", "Four"]
+    private var itemsFacebook = [FacebookShare(), FacebookShare()]
     
     let pickerForActivity: UIPickerView = {
         let picker = UIPickerView()
         return picker
     }()
     
+    // MARK: Live cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerForActivity.center = view.center
@@ -29,8 +31,9 @@ class ActivityViewController: UIViewController {
         view.addSubview(pickerForActivity)
     }
     
+    // MARK: Actions
     @IBAction func buttonActivityAction(_ sender: UIButton) {
-         openActivityVC(parameter: itemsArray)
+         openActivityVC(parameter: itemsFacebook)
     }
         
     @IBAction func spanchButtonuAction(_ sender: UIButton) {
@@ -44,6 +47,7 @@ class ActivityViewController: UIViewController {
     }
 }
 
+// MARK: Extensions
 extension ActivityViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -62,5 +66,25 @@ extension ActivityViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         if row == 2 {
             openActivityVC(parameter: itemsArray)
         }
+    }
+}
+
+/// FacebookShare
+class FacebookShare: NSObject, UIActivityItemSource {
+    
+    var placeholder = "New post"
+    var newsFromFacebook = "For facebook"
+    var url = ""
+    
+    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+        return placeholder
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController,
+                                itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+        if activityType == .postToFacebook {
+            return newsFromFacebook
+        }
+        return nil
     }
 }
