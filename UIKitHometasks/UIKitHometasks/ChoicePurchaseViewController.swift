@@ -7,6 +7,7 @@
 
 import UIKit
 /// viewController для выбора покупок
+// MARK: UI elements
 class ChoicePurchaseViewController: UIViewController {
     let menuSegmentArray = ["monets", "points"]
     let imagesSegmentArray = [UIImage(named: "monets"), UIImage(named: "point")]
@@ -44,6 +45,7 @@ class ChoicePurchaseViewController: UIViewController {
         return button
     }()
 
+    // MARK: Live cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
