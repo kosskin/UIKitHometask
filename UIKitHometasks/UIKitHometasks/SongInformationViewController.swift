@@ -7,9 +7,10 @@
 
 import AVFoundation
 import UIKit
-/// viewController описывает экран с информаицей о песне
+/// SongInformationViewController описывает экран с информаицей о песне
 class SongInformationViewController: UIViewController {
 
+    // MARK: UI elements
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var albumLabel: UILabel!
@@ -26,6 +27,7 @@ class SongInformationViewController: UIViewController {
     
     var song: Int?
     
+    // MARK: Live cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -34,6 +36,7 @@ class SongInformationViewController: UIViewController {
         player.play()
     }
     
+    // MARK: Configuration UI
     func configUI() {
         slider.minimumValue = 0
         slider.maximumValue = 100
@@ -44,6 +47,7 @@ class SongInformationViewController: UIViewController {
         imageViewPicture.image = UIImage(named: songs[index].picture)
     }
     
+    // MARK: Methods
     func playingSong() {
         do {
             if let audioPath = Bundle.main.path(forResource: "patron", ofType: "mp3") {

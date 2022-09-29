@@ -6,7 +6,7 @@
 //
 
 import Foundation
-/// Модель для песен
+/// Модель для создания песен
 class Song {
     let name: String
     let singer: String
