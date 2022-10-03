@@ -7,16 +7,17 @@
 
 import AVFoundation
 import UIKit
-/// SongInformationViewController описывает экран с информаицей о песне
-class SongInformationViewController: UIViewController {
+/// эуран  с информаицей о песне
+final class SongInformationViewController: UIViewController {
 
     // MARK: UI elements
+    
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var albumLabel: UILabel!
     @IBOutlet weak var singerLabel: UILabel!
-    @IBOutlet weak var songName: UILabel!
-    @IBOutlet weak var imageViewPicture: UIImageView!
+    @IBOutlet weak var songNameLabel: UILabel!
+    @IBOutlet weak var pictureImageView: UIImageView!
     
     var player = AVAudioPlayer()
     var isPlaying: Bool = true
@@ -27,27 +28,30 @@ class SongInformationViewController: UIViewController {
     
     var song: Int?
     
-    // MARK: Live cycle
+    // MARK: Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
-        slider.addTarget(self, action: #selector(settingSlider), for: .valueChanged)
-        playingSong()
-        player.play()
     }
     
     // MARK: Configuration UI
+    
     func configUI() {
         slider.minimumValue = 0
         slider.maximumValue = 100
         guard let index = song else { return }
         albumLabel.text = songs[index].album
-        songName.text = songs[index].name
+        songNameLabel.text = songs[index].name
         singerLabel.text = songs[index].singer
-        imageViewPicture.image = UIImage(named: songs[index].picture)
+        pictureImageView.image = UIImage(named: songs[index].picture)
+        slider.addTarget(self, action: #selector(settingSlider), for: .valueChanged)
+        playingSong()
+        player.play()
     }
     
     // MARK: Methods
+    
     func playingSong() {
         do {
             if let audioPath = Bundle.main.path(forResource: "patron", ofType: "mp3") {

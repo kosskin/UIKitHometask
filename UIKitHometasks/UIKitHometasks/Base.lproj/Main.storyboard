@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,7 +12,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIKitHometasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBt-Hx-xvZ">
@@ -24,14 +23,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album1" translatesAutoresizingMaskIntoConstraints="NO" id="brU-t8-SH4">
-                                <rect key="frame" x="5" y="130" width="60" height="60"/>
+                                <rect key="frame" x="5" y="86" width="87" height="40"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7q2-Fc-tQE">
-                                <rect key="frame" x="14" y="201" width="386" height="1"/>
+                                <rect key="frame" x="20.5" y="157" width="559" height="0.5"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8v-CV-PkZ">
-                                <rect key="frame" x="352" y="151" width="35" height="21"/>
+                                <rect key="frame" x="538" y="107" width="35" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="0pQ-w4-bRQ"/>
                                     <constraint firstAttribute="width" constant="35" id="pYX-V0-7z2"/>
@@ -41,14 +40,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album" translatesAutoresizingMaskIntoConstraints="NO" id="s2P-Ga-uDi">
-                                <rect key="frame" x="5" y="218" width="60" height="60"/>
+                                <rect key="frame" x="164" y="174" width="87" height="40"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZI-CN-CGd">
-                                <rect key="frame" x="14" y="289" width="386" height="1"/>
+                                <rect key="frame" x="14" y="245" width="572" height="0.5"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOR-dX-WeJ">
-                                <rect key="frame" x="351" y="239" width="35" height="21"/>
+                                <rect key="frame" x="537" y="195" width="35" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="F1d-Pt-hhS"/>
                                     <constraint firstAttribute="width" constant="35" id="OU3-lc-LtD"/>
@@ -65,7 +64,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="songOneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q4i-xW-tqX"/>
+                                    <action selector="songOneButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q4i-xW-tqX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCW-HS-2LO">
@@ -76,7 +75,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="songTwoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ZD-h1-ZLx"/>
+                                    <action selector="songTwoButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ZD-h1-ZLx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,7 +123,7 @@
             <objects>
                 <viewController storyboardIdentifier="SongInformationViewController" id="BOZ-dH-7gc" customClass="SongInformationViewController" customModule="UIKitHometasks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YsV-Ab-Yht">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="album" translatesAutoresizingMaskIntoConstraints="NO" id="98f-Uy-Lmk">
@@ -257,11 +256,11 @@
                     </view>
                     <connections>
                         <outlet property="albumLabel" destination="cKE-Nc-tzt" id="eb7-ub-Ama"/>
-                        <outlet property="imageViewPicture" destination="98f-Uy-Lmk" id="O5Q-V3-WYp"/>
+                        <outlet property="pictureImageView" destination="98f-Uy-Lmk" id="O5Q-V3-WYp"/>
                         <outlet property="playPauseButton" destination="Jyb-Uz-nRK" id="Dqs-dN-ia0"/>
                         <outlet property="singerLabel" destination="bOr-MA-5eM" id="GeD-Dc-udM"/>
                         <outlet property="slider" destination="9xI-p0-GBr" id="IbP-Y6-g4q"/>
-                        <outlet property="songName" destination="nb7-gC-60z" id="nfB-FI-46f"/>
+                        <outlet property="songNameLabel" destination="nb7-gC-60z" id="nfB-FI-46f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxO-mS-tRD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

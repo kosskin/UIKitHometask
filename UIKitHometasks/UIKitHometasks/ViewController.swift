@@ -5,28 +5,28 @@
 //  Created by Валентин Коскин on 22.09.2022.
 //
 import UIKit
- 
-/// Главный ViewController с плеером
-class ViewController: UIViewController {
-    // MARK: UI elements
-    @IBOutlet weak var nameListLabel: UILabel!
+/// экран с плеером
+final class ViewController: UIViewController {
     
+    // MARK: UI elements
+    
+    @IBOutlet weak var nameListLabel: UILabel!
     @IBOutlet weak var albumOneImageView: UIImageView!
     @IBOutlet weak var durationSongOneLabel: UILabel!
     @IBOutlet weak var lineOneView: UIView!
-    
     @IBOutlet weak var albumTwoImageView: UIImageView!
     @IBOutlet weak var durationSongTwoLabel: UILabel!
     @IBOutlet weak var lineTwoView: UIView!
     
     // MARK: Live cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     // MARK: Methods
-    @IBAction func songOneButton(_ sender: UIButton) {
+    
+    @IBAction func songOneButtonAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let secondViewContoller = storyboard.instantiateViewController(identifier:
                 "SongInformationViewController") as? SongInformationViewController else { return }
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         show(secondViewContoller, sender: nil)
     }
     
-    @IBAction func songTwoButton(_ sender: UIButton) {
+    @IBAction func songTwoButtonAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let secondViewContoller = storyboard.instantiateViewController(identifier:
                 "SongInformationViewController") as? SongInformationViewController else { return }
