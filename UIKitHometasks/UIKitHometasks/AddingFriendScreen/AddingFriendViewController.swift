@@ -7,13 +7,13 @@
 
 import UIKit
 
-/// ViewController для экрана с добавлением друга в birthdayList
-class AddingFriendViewController: UIViewController {
+/// экран  для добавления друга в birthdayList
+final class AddingFriendViewController: UIViewController {
     
     private let possibleAges = Array(18...60)
     private let manWoman = ["Парень", "Девушка"]
     
-    let contactImageView: UIImageView = {
+    private let contactImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "person.circle")
         imageView.frame = CGRect(x: 130, y: 119, width: 155, height: 155)
@@ -21,7 +21,7 @@ class AddingFriendViewController: UIViewController {
         return imageView
     }()
     
-    let changePhotoProfile: UILabel = {
+    private let changePhotoProfileLabel: UILabel = {
         let label = UILabel()
         label.text = "Изменить фото"
         label.textAlignment = .center
@@ -31,7 +31,7 @@ class AddingFriendViewController: UIViewController {
         return label
     }()
     
-    let nameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 35, y: 325, width: 34, height: 21))
         label.text = "Имя"
         label.textColor = .systemBlue
@@ -39,7 +39,7 @@ class AddingFriendViewController: UIViewController {
         return label
     }()
     
-    let nameTextField: UITextField = {
+    private let nameTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 35, y: 355, width: 340, height: 21))
         textField.placeholder = "Введите имя"
         let bottom = CALayer()
@@ -49,7 +49,7 @@ class AddingFriendViewController: UIViewController {
         return textField
     }()
     
-    let dateLabel: UILabel = {
+    private let dateLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 35, y: 395, width: 34, height: 21))
         label.text = "Дата"
         label.textColor = .systemBlue
@@ -57,7 +57,7 @@ class AddingFriendViewController: UIViewController {
         return label
     }()
     
-    let dateTextField: UITextField = {
+    private let dateTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 35, y: 425, width: 340, height: 21))
         textField.placeholder = "Введите дату"
         let bottom = CALayer()
@@ -67,7 +67,7 @@ class AddingFriendViewController: UIViewController {
         return textField
     }()
     
-    let datePicker: UIDatePicker = {
+    private let datePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.preferredDatePickerStyle = .wheels
         picker.datePickerMode = .dateAndTime
@@ -75,7 +75,7 @@ class AddingFriendViewController: UIViewController {
         return picker
     }()
     
-    let ageLabel: UILabel = {
+    private let ageLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 35, y: 465, width: 104, height: 21))
         label.text = "Возраст"
         label.textColor = .systemBlue
@@ -83,7 +83,7 @@ class AddingFriendViewController: UIViewController {
         return label
     }()
     
-    let ageTextField: UITextField = {
+    private let ageTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 35, y: 495, width: 340, height: 21))
         textField.placeholder = "Добавить"
         let bottom = CALayer()
@@ -93,13 +93,13 @@ class AddingFriendViewController: UIViewController {
         return textField
     }()
 
-    let selectAgePicker: UIPickerView = {
+    private let selectAgePicker: UIPickerView = {
         let picker = UIPickerView()
         picker.tag = 1
         return picker
     }()
         
-    let sexLabel: UILabel = {
+    private let sexLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 35, y: 535, width: 34, height: 21))
         label.text = "Пол"
         label.textColor = .systemBlue
@@ -107,7 +107,7 @@ class AddingFriendViewController: UIViewController {
         return label
     }()
     
-    let sexTextField: UITextField = {
+    private let sexTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 35, y: 565, width: 340, height: 21))
         textField.placeholder = "Добавить"
         let bottom = CALayer()
@@ -117,13 +117,13 @@ class AddingFriendViewController: UIViewController {
         return textField
     }()
     
-    let selectSexPicker: UIPickerView = {
+    private let selectSexPicker: UIPickerView = {
         let picker = UIPickerView()
         picker.tag = 2
         return picker
     }()
     
-    let instagramLabel: UILabel = {
+    private let instagramLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 35, y: 605, width: 104, height: 21))
         label.text = "Instagram"
         label.textColor = .systemBlue
@@ -131,28 +131,30 @@ class AddingFriendViewController: UIViewController {
         return label
     }()
     
-    let instagramTextField: UITextField = {
+    private let instagramTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 35, y: 635, width: 340, height: 21))
         textField.placeholder = "Добавить"
         let bottom = CALayer()
         bottom.frame = CGRect(x: 0, y: textField.frame.height + 3, width: textField.frame.width, height: 1.0)
         textField.layer.addSublayer(bottom)
         bottom.backgroundColor = UIColor.lightGray.cgColor
-        textField.addTarget(self, action: #selector(getAlertInstagram), for: .allEvents)
+        textField.addTarget(self, action: #selector(getAlertInstagramAction), for: .allEvents)
         return textField
     }()
+    
+    // MARK: Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Добавить", style: .done, target: nil, action: nil)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .done, target: nil, action: nil)
     }
 
+    // MARK: Methods
+    
     func configUI() {
         view.backgroundColor = .white
         view.addSubview(contactImageView)
-        view.addSubview(changePhotoProfile)
+        view.addSubview(changePhotoProfileLabel)
         view.addSubview(nameLabel)
         view.addSubview(nameTextField)
         view.addSubview(dateLabel)
@@ -174,6 +176,9 @@ class AddingFriendViewController: UIViewController {
         sexTextField.inputView = selectSexPicker
         selectSexPicker.dataSource = self
         selectSexPicker.delegate = self
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Добавить", style: .done, target: nil, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .done, target: nil, action: nil)
     }
     
     func createToolBar() -> UIToolbar {
@@ -193,7 +198,7 @@ class AddingFriendViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @objc func getAlertInstagram() {
+    @objc func getAlertInstagramAction() {
         let alertController = UIAlertController(title: "Введите username Instagram",
                                                 message: "", preferredStyle: .alert)
         let alertActionOk = UIAlertAction(title: "ok", style: .default) { _ in
@@ -209,6 +214,8 @@ class AddingFriendViewController: UIViewController {
     }
     
 }
+
+// MARK: UIPickerViewDelegate, UIPickerViewDataSource
 
 extension AddingFriendViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

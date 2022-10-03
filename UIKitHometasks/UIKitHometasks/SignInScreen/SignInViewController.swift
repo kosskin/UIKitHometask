@@ -6,8 +6,8 @@
 //
 import UIKit
 
-/// SignInViewController с экраном входа
-class SignInViewController: UIViewController {
+/// экран входа
+final class SignInViewController: UIViewController {
     
     private let birthdayReminderLabel: UILabel = {
         let label = UILabel()

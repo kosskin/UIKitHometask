@@ -7,8 +7,8 @@
 
 import UIKit
 
-///BirthdayListViewController - отвечает за список людей с их др
-class BirthdayListViewController: UIViewController {
+/// экран списка людей с их др
+final class BirthdayListViewController: UIViewController {
     
     private let jeremyNameLabel: UILabel = {
         let label = UILabel()
@@ -70,7 +70,7 @@ class BirthdayListViewController: UIViewController {
         return label
     }()
     
-    private let mariaImage: UIImageView = {
+    private let mariaImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "person.circle")
         imageView.frame = CGRect(x: 8, y: 186, width: 66, height: 66)
@@ -104,24 +104,17 @@ class BirthdayListViewController: UIViewController {
         return label
     }()
     
-    private let jonyImage: UIImageView = {
+    private let jonyImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "person.circle")
         imageView.frame = CGRect(x: 8, y: 256, width: 66, height: 66)
         imageView.tintColor = .gray
         return imageView
     }()
-    
-//    private let plusButtonItem: UIBarButtonItem = {
-//        let buttomItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(pushNewView))
-//        return buttomItem
-//    }()
         
     override func viewDidLoad() {
         super.viewDidLoad()
         configuUI()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
-                                                            target: self, action: #selector(pushNewView))
     }
     
     func configuUI() {
@@ -133,11 +126,14 @@ class BirthdayListViewController: UIViewController {
         view.addSubview(mariaNameLabel)
         view.addSubview(mariaDescriptionLabel)
         view.addSubview(mariaDaysLabel)
-        view.addSubview(mariaImage)
+        view.addSubview(mariaImageView)
         view.addSubview(jonyNameLabel)
         view.addSubview(jonyDescriptionLabel)
         view.addSubview(jonyDaysLabel)
-        view.addSubview(jonyImage)
+        view.addSubview(jonyImageView)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                            target: self, action: #selector(pushNewView))
     }
 
     @objc func pushNewView() {
