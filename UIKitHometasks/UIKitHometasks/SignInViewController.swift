@@ -5,10 +5,11 @@
 //  Created by Валентин Коскин on 22.09.2022.
 //
 import UIKit
-
-/// Главный ViewController
-class SignInViewController: UIViewController {
+/// экран входа
+final class SignInViewController: UIViewController {
+    
     // MARK: UI elements
+    
     let backgroundImageView: UIImageView = {
         let imageView = UIImageView(frame: UIScreen.main.bounds)
         imageView.image = UIImage(named: "fifa23")
@@ -101,6 +102,7 @@ class SignInViewController: UIViewController {
         }()
     
     // MARK: Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -115,7 +117,9 @@ class SignInViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
     // MARK: Configuration UI
+    
     func configUI() {
         view.addSubview(backgroundImageView)
         view.addSubview(signInLabel)
@@ -130,6 +134,7 @@ class SignInViewController: UIViewController {
     }
     
     // MARK: Methods
+    
     @objc func eyeButtonAction(sender: UIButton) {
         if passwordTextField.isSecureTextEntry == true {
             passwordTextField.isSecureTextEntry = false

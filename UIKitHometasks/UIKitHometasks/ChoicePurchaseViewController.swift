@@ -6,38 +6,40 @@
 //
 
 import UIKit
-/// viewController для выбора покупок
-// MARK: UI elements
-class ChoicePurchaseViewController: UIViewController {
-    let menuSegmentArray = ["monets", "points"]
-    let imagesSegmentArray = [UIImage(named: "monets"), UIImage(named: "point")]
-    var choicePurchaseSegmentControl = UISegmentedControl()
+/// экран для выбора покупок
+final class ChoicePurchaseViewController: UIViewController {
+    
+    private let menuSegmentArray = ["monets", "points"]
+    private let imagesSegmentArray = [UIImage(named: "monets"), UIImage(named: "point")]
+    private var choicePurchaseSegmentControl = UISegmentedControl()
     public var monetPoint = String()
     public var amount = Int()
-    var choiceAmountArray = [100, 1000, 5000, 50000, 100000]
+    private var choiceAmountArray = [100, 1000, 5000, 50000, 100000]
     
-    let amountLabel: UILabel = {
+    // MARK: UI elements
+
+    private let amountLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 140, y: 450, width: 150, height: 30))
         label.text = "Choice amount"
         return label
     }()
     
-    let amountMoneyPicker: UIPickerView = {
+    private let amountMoneyPicker: UIPickerView = {
         let picker = UIPickerView(frame: CGRect(x: 50, y: 500, width: 0, height: 0))
         return picker
     }()
     
-    let choiceAmountLabel: UILabel = {
+    private let choiceAmountLabel: UILabel = {
         let label = UILabel()
         return label
     }()
     
-    let monetPointImageView: UIImageView = {
+    private let monetPointImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 100, y: 100, width: 200, height: 200))
         return imageView
     }()
     
-    let enterButton: UIButton = {
+    private let enterButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 100, y: 800, width: 200, height: 40))
         button.backgroundColor = .red
         button.tintColor = .white
@@ -45,20 +47,21 @@ class ChoicePurchaseViewController: UIViewController {
         return button
     }()
 
-    // MARK: Live cycle
+    // MARK: Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        monetPointImageView.image = imagesSegmentArray[0]
         choicePurchaseSegmentControl = UISegmentedControl(items: menuSegmentArray)
         choicePurchaseSegmentControl.frame = CGRect(x: 60, y: 300, width: 300, height: 30)
-        choicePurchaseSegmentControl.addTarget(self, action: #selector(changeSegmentValueAction(target:)), for: .valueChanged)
         amountMoneyPicker.delegate = self
         amountMoneyPicker.dataSource = self
         confingUI()
     }
     
+    // MARK: Configutation UI
+    
     func confingUI() {
+        view.backgroundColor = .white
         view.addSubview(monetPointImageView)
         monetPointImageView.image = imagesSegmentArray[0]
         view.addSubview(choicePurchaseSegmentControl)
@@ -66,7 +69,12 @@ class ChoicePurchaseViewController: UIViewController {
         view.addSubview(amountMoneyPicker)
         enterButton.setTitle("BUY", for: .normal)
         view.addSubview(enterButton)
+        monetPointImageView.image = imagesSegmentArray[0]
+        choicePurchaseSegmentControl.addTarget(self,
+                                               action: #selector(changeSegmentValueAction(target:)), for: .valueChanged)
     }
+    
+    // MARK: Methods
     
     @objc func changeSegmentValueAction(target: UISegmentedControl) {
         if target == choicePurchaseSegmentControl {
@@ -83,6 +91,9 @@ class ChoicePurchaseViewController: UIViewController {
     }
     
 }
+
+// MARK: UIPickerViewDataSource, UIPickerViewDelegate
+
 extension ChoicePurchaseViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

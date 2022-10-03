@@ -6,12 +6,16 @@
 //
 
 import UIKit
-/// ViewController with congratulations
-class CongratulationsViewController: UIViewController {
-    let grades = [1, 2, 3, 4, 5]
+/// экран с подздравлением и опросом качества 
+final class CongratulationsViewController: UIViewController {
+    private enum Constants {
+        static let grades: [Int] = [1, 2, 3, 4, 5]
+
+    }
     
     // MARK: UI elements
-    let congratulationsLabel: UILabel = {
+    
+    private let congratulationsLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 50, y: 200, width: 300, height: 50))
         label.backgroundColor = .red
         label.textColor = .white
@@ -20,7 +24,7 @@ class CongratulationsViewController: UIViewController {
         return label
     }()
     
-    let gradeSlider: UISlider = {
+    private let gradeSlider: UISlider = {
         let slider = UISlider(frame: CGRect(x: 100, y: 500, width: 200, height: 45))
         slider.maximumValue = 0
         slider.maximumValue = 5
@@ -28,22 +32,23 @@ class CongratulationsViewController: UIViewController {
         return slider
     }()
     
-    let askGoodOrNotLabel: UILabel = {
+    private let askGoodOrNotLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 150, y: 400, width: 200, height: 30))
         label.text = "Did you like app?"
         
         return label
     }()
 
-    // MARK: Live cycle
+    // MARK: Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         configUI()
     }
 
     // MARK: configuration UI
     func configUI() {
+        view.backgroundColor = .white
         view.addSubview(congratulationsLabel)
         view.addSubview(gradeSlider)
         view.addSubview(askGoodOrNotLabel)
