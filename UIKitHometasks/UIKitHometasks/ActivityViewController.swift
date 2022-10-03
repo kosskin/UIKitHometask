@@ -6,23 +6,30 @@
 //
 import UIKit
 
-/// ViewController  c использованием UIActivityViewController
-class ActivityViewController: UIViewController {
+///  экран c использованием UIActivityViewController
+final class ActivityViewController: UIViewController {
+    
     // MARK: Outlets
+    
     @IBOutlet private weak var buttonToOpenActivityVC: UIButton!
     @IBOutlet private weak var spanchImageView: UIImageView!
     @IBOutlet private weak var spanchButton: UIButton!
     
+    // MARK: Private properties
+    
     private var activityViewController: UIActivityViewController?
     private var itemsArray = ["One", "Two", "Three", "Four"]
-    private var itemsFacebook = [FacebookShare(), FacebookShare()]
+    private let facebook = FacebookShare()
     
-    let pickerForActivity: UIPickerView = {
+    // MARK: UI elements
+    
+    private let pickerForActivity: UIPickerView = {
         let picker = UIPickerView()
         return picker
     }()
     
-    // MARK: Live cycle
+    // MARK: Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerForActivity.center = view.center
@@ -31,23 +38,26 @@ class ActivityViewController: UIViewController {
         view.addSubview(pickerForActivity)
     }
     
-    // MARK: Actions
+    // MARK: Methods
+    
     @IBAction func buttonActivityAction(_ sender: UIButton) {
-         openActivityVC(parameter: itemsFacebook)
+         openActivityVC(activityItems: [facebook])
     }
         
     @IBAction func spanchButtonuAction(_ sender: UIButton) {
         guard let image = UIImage(named: "bob") else { return }
-        openActivityVC(parameter: [image])
+        openActivityVC(activityItems: [image])
     }
     
-    @objc func openActivityVC(parameter: [Any]) {
-        let activityVC = UIActivityViewController(activityItems: parameter, applicationActivities: nil)
+    private func openActivityVC(activityItems: [Any], applicationActivities: [UIActivity]? = nil) {
+        let activityVC = UIActivityViewController(activityItems: activityItems,
+                                                  applicationActivities: applicationActivities)
         present(activityVC, animated: true, completion: nil)
     }
 }
 
-// MARK: Extensions
+// MARK: UIPickerViewDataSource, UIPickerViewDelegate
+
 extension ActivityViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -64,7 +74,7 @@ extension ActivityViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row == 2 {
-            openActivityVC(parameter: itemsArray)
+            openActivityVC(activityItems: itemsArray)
         }
     }
 }
@@ -77,12 +87,12 @@ class FacebookShare: NSObject, UIActivityItemSource {
     var url = ""
     
     func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
-        return placeholder
+        placeholder
     }
     
     func activityViewController(_ activityViewController: UIActivityViewController,
                                 itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
-        if activityType == .postToFacebook {
+        if activityType == .message {
             return newsFromFacebook
         }
         return nil
