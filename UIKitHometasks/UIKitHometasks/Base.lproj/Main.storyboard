@@ -41,7 +41,6 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Enter"/>
                                 <connections>
-                                    <action selector="enterButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Hk-TZ-XWk"/>
                                     <segue destination="G0J-q1-Kkl" kind="presentation" id="J5w-kW-OEr"/>
                                 </connections>
                             </button>

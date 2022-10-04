@@ -31,7 +31,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         loginTextField.delegate = self
         passwordTextField.delegate = self
         repeatPasswordTextField.delegate = self
-        //loginTextField.becomeFirstResponder()
         
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification,
                                                object: nil, queue: nil) { _ in
@@ -55,21 +54,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: UITextFieldDelegate
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        switch textField {
-        case loginTextField:
-            loginTextField.resignFirstResponder()
-            passwordTextField.becomeFirstResponder()
-        case passwordTextField:
-            passwordTextField.resignFirstResponder()
-            repeatPasswordTextField.becomeFirstResponder()
-        case repeatPasswordTextField:
-            repeatPasswordTextField.resignFirstResponder()
-        default:
-            break
-        }
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
