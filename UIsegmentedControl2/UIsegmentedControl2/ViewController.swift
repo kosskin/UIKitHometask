@@ -6,13 +6,21 @@
 //
 
 import UIKit
+/// экран с выбором  картинкок
+final class ViewController: UIViewController {
 
-class ViewController: UIViewController {
-
-    var segmentControl = UISegmentedControl()
-    var menuArray = ["one", "two", "three"]
-    var imageView = UIImageView()
-    var imaageArray = [UIImage(named: "album"), UIImage(named: "album1"), UIImage(named: "asdasd")]
+    // MARK: uielements
+    
+    private var segmentControl = UISegmentedControl()
+    private let imageView = UIImageView()
+    private let imaageArray = [UIImage(named: "album"), UIImage(named: "album1"), UIImage(named: "asdasd")]
+    
+    // MARK: constants
+    
+    private let menuArray = ["one", "two", "three"]
+    
+    
+    // MARK: Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +33,12 @@ class ViewController: UIViewController {
         segmentControl.frame = CGRect(x: 100, y: 600, width: 200, height: 30)
         view.addSubview(segmentControl)
         
-        segmentControl.addTarget(self, action: #selector(selectedValue), for: .valueChanged)
+        segmentControl.addTarget(self, action: #selector(selectedValueAction), for: .valueChanged)
     }
     
-    @objc func selectedValue(target: UISegmentedControl) {
+    // MARK: methods
+    
+    @objc func selectedValueAction(target: UISegmentedControl) {
         if target == segmentControl {
             let segmentIndex = target.selectedSegmentIndex
             
