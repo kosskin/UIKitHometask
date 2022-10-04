@@ -107,11 +107,6 @@ final class SignInViewController: UIViewController {
         super.viewDidLoad()
         configUI()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -131,6 +126,7 @@ final class SignInViewController: UIViewController {
         view.addSubview(faceIDSwitch)
         view.addSubview(enterButton)
         view.addSubview(eyeButton)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     // MARK: Methods

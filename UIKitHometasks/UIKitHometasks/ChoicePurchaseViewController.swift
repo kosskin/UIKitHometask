@@ -51,10 +51,6 @@ final class ChoicePurchaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        choicePurchaseSegmentControl = UISegmentedControl(items: menuSegmentArray)
-        choicePurchaseSegmentControl.frame = CGRect(x: 60, y: 300, width: 300, height: 30)
-        amountMoneyPicker.delegate = self
-        amountMoneyPicker.dataSource = self
         confingUI()
     }
     
@@ -70,8 +66,13 @@ final class ChoicePurchaseViewController: UIViewController {
         enterButton.setTitle("BUY", for: .normal)
         view.addSubview(enterButton)
         monetPointImageView.image = imagesSegmentArray[0]
+        choicePurchaseSegmentControl = UISegmentedControl(items: menuSegmentArray)
+        choicePurchaseSegmentControl.frame = CGRect(x: 60, y: 300, width: 300, height: 30)
+        amountMoneyPicker.delegate = self
+        amountMoneyPicker.dataSource = self
         choicePurchaseSegmentControl.addTarget(self,
                                                action: #selector(changeSegmentValueAction(target:)), for: .valueChanged)
+        
     }
     
     // MARK: Methods
