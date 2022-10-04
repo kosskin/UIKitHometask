@@ -1,29 +1,22 @@
 //
 //  SceneDelegate.swift
-//  UIKitHometasks
+//  UIsegmentedControl2
 //
-//  Created by Валентин Коскин on 22.09.2022.
+//  Created by Валентин Коскин on 27.09.2022.
 //
 
 import UIKit
 
-/// class SceneDelegate
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    func scene(_ scene: UIScene,
-               willConnectTo session: UISceneSession,
-               options connectionOptions: UIScene.ConnectionOptions) {
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let scene = (scene as? UIWindowScene) else { return }
-        
-        self.window = UIWindow(windowScene: scene)
-        let navigationController = UINavigationController(rootViewController: SignInViewController())
-        self.window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
+        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -54,4 +47,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+
 }
+
