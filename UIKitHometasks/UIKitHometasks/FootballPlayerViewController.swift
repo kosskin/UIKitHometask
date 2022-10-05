@@ -8,9 +8,16 @@
 import UIKit
 /// экран с выбором футболиста и его рейтингом
 final class FootballPlayerViewController: UIViewController {
+    
+    // MARK: IBOutlet
+    
     @IBOutlet weak var choiceLabel: UILabel!
     @IBOutlet weak var listFootballersPickerView: UIPickerView!
     @IBOutlet weak var footballerInfoLabel: UILabel!
+    @IBOutlet weak var showInfoLabel: UILabel!
+    @IBOutlet weak var showInfoSwitch: UISwitch!
+    
+    // MARK: Constants
     
     private enum Constants {
         static let playerArray = ["Ronaldo",
@@ -24,7 +31,26 @@ final class FootballPlayerViewController: UIViewController {
         listFootballersPickerView.dataSource = self
         listFootballersPickerView.delegate = self
     }
+    
+    // MARK: IBActions
+    
+    @IBAction func showInfoAction(_ sender: UISwitch) {
+        footballerInfoLabel.isHidden = sender.isOn ? false : true
+    }
+    
+    // MARK: Methods
+    
+    private func showAlertAction() {
+        let badProgrammerAlertController = UIAlertController(title: "Это отличный футболист!",
+            message: "Жаль, что пока хреновый программист", preferredStyle: .alert)
+        let alertOK = UIAlertAction(title: "Ок, в Done", style: .default, handler: nil)
+        badProgrammerAlertController.addAction(alertOK)
+        present(badProgrammerAlertController, animated: true, completion: nil)
+    }
 }
+
+// MARK: UIPickerViewDelegate, UIPickerViewDataSource
+
 extension FootballPlayerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -46,6 +72,7 @@ extension FootballPlayerViewController: UIPickerViewDelegate, UIPickerViewDataSo
             footballerInfoLabel.text = "It is \(Constants.playerArray[row]). His rating is 80"
         case 2:
             footballerInfoLabel.text = "It is \(Constants.playerArray[row]). His rating is 99. Also he is a programmer"
+            showAlertAction()
         case 3:
             footballerInfoLabel.text = "It is \(Constants.playerArray[row]). His rating is 89"
         case 4:
