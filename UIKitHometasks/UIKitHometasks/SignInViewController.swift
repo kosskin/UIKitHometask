@@ -7,18 +7,25 @@
 import UIKit
 
 /// ViewController с полями входа (для ввода логина и пароля)
-class SignInViewController: UIViewController {
+final class SignInViewController: UIViewController {
     
     // MARK: UI elements
     private let cloudImage: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 100, y: 80, width: 100, height: 50))
+        let imageView = UIImageView(frame: CGRect(x: 125, y: 80, width: 150, height: 70))
         imageView.image = UIImage(systemName: "cloud.fill")
         imageView.tintColor = .lightGray
         return imageView
     }()
     
+    private let textOnCloudLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: 175, y: 95, width: 100, height: 50))
+        label.text = "Bringo"
+        label.textColor = .systemBlue
+        return label
+    }()
+    
     private let emailLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 50, y: 200, width: 100, height: 24))
+        let label = UILabel(frame: CGRect(x: 50, y: 280, width: 100, height: 24))
         label.text = "Email"
         label.textColor = .systemBlue
         label.font = .italicSystemFont(ofSize: 12)
@@ -26,14 +33,15 @@ class SignInViewController: UIViewController {
     }()
     
     private let emailTextField: UITextField = {
-        let textField = UITextField(frame: CGRect(x: 50, y: 230, width: 300, height: 24))
+        let textField = UITextField(frame: CGRect(x: 50, y: 310, width: 300, height: 24))
         textField.placeholder = "example@mail.ru"
         textField.font = .italicSystemFont(ofSize: 12)
+        textField.keyboardType = .numberPad
         return textField
     }()
 
     private let passwordLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 50, y: 260, width: 100, height: 24))
+        let label = UILabel(frame: CGRect(x: 50, y: 370, width: 100, height: 24))
         label.text = "Password"
         label.textColor = .systemBlue
         label.font = .italicSystemFont(ofSize: 12)
@@ -41,19 +49,23 @@ class SignInViewController: UIViewController {
     }()
     
     private let passwodrTextField: UITextField = {
-        let textField = UITextField(frame: CGRect(x: 50, y: 290, width: 300, height: 24))
+        let textField = UITextField(frame: CGRect(x: 50, y: 390, width: 300, height: 24))
         textField.placeholder = "password"
         textField.font = .italicSystemFont(ofSize: 12)
         return textField
     }()
     
     private let enterButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 80, y: 350, width: 200, height: 40))
+        let button = UIButton(frame: CGRect(x: 100, y: 500, width: 200, height: 40))
         button.backgroundColor = .systemBlue
+        button.setTitle("Войти", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(showNextViewController), for: .touchUpInside)
         return button
     }()
     
-    // MARK: Live cycle
+    // MARK: Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -61,11 +73,23 @@ class SignInViewController: UIViewController {
     
     // MARK: Configuration UI
     func configUI() {
+        view.backgroundColor = .white
         view.addSubview(cloudImage)
+        view.addSubview(textOnCloudLabel)
         view.addSubview(emailLabel)
         view.addSubview(emailTextField)
         view.addSubview(passwordLabel)
         view.addSubview(passwodrTextField)
         view.addSubview(enterButton)
+    }
+    
+    // MARK: Methods
+    
+    @objc func showNextViewController() {
+        let foodViewController = FoodViewController()
+        let navigationController = UINavigationController(rootViewController: foodViewController)
+        foodViewController.title = "Food"
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: false, completion: nil)
     }
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB54191928ED894400610B3D /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54191828ED894400610B3D /* FoodViewController.swift */; };
+		BB54191C28ED8F5F00610B3D /* PizzaChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54191B28ED8F5F00610B3D /* PizzaChoiceViewController.swift */; };
+		BB54191F28EDAF3800610B3D /* IngridientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54191E28EDAF3800610B3D /* IngridientsViewController.swift */; };
+		BB54192228EDC17000610B3D /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54192128EDC17000610B3D /* CheckViewController.swift */; };
 		BBD6075728DC7BD20047378A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075628DC7BD20047378A /* AppDelegate.swift */; };
 		BBD6075928DC7BD20047378A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075828DC7BD20047378A /* SceneDelegate.swift */; };
 		BBD6075B28DC7BD20047378A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075A28DC7BD20047378A /* SignInViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB54191828ED894400610B3D /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		BB54191B28ED8F5F00610B3D /* PizzaChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaChoiceViewController.swift; sourceTree = "<group>"; };
+		BB54191E28EDAF3800610B3D /* IngridientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientsViewController.swift; sourceTree = "<group>"; };
+		BB54192128EDC17000610B3D /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		BBD6075328DC7BD20047378A /* UIKitHometasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHometasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD6075628DC7BD20047378A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBD6075828DC7BD20047378A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +67,10 @@
 				BBD6075628DC7BD20047378A /* AppDelegate.swift */,
 				BBD6075828DC7BD20047378A /* SceneDelegate.swift */,
 				BBD6075A28DC7BD20047378A /* SignInViewController.swift */,
+				BB54191828ED894400610B3D /* FoodViewController.swift */,
+				BB54191B28ED8F5F00610B3D /* PizzaChoiceViewController.swift */,
+				BB54191E28EDAF3800610B3D /* IngridientsViewController.swift */,
+				BB54192128EDC17000610B3D /* CheckViewController.swift */,
 				BBD6075C28DC7BD20047378A /* Main.storyboard */,
 				BBD6075F28DC7BD40047378A /* Assets.xcassets */,
 				BBD6076128DC7BD40047378A /* LaunchScreen.storyboard */,
@@ -159,9 +171,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB54191C28ED8F5F00610B3D /* PizzaChoiceViewController.swift in Sources */,
 				BBD6075B28DC7BD20047378A /* SignInViewController.swift in Sources */,
 				BBD6075728DC7BD20047378A /* AppDelegate.swift in Sources */,
+				BB54191928ED894400610B3D /* FoodViewController.swift in Sources */,
 				BBD6075928DC7BD20047378A /* SceneDelegate.swift in Sources */,
+				BB54191F28EDAF3800610B3D /* IngridientsViewController.swift in Sources */,
+				BB54192228EDC17000610B3D /* CheckViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
