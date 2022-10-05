@@ -39,14 +39,14 @@ final class WelcomeViewController: UIViewController {
     
     // MARK: Life cycle
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
     
     // MARK: Configuration UI
@@ -62,7 +62,7 @@ final class WelcomeViewController: UIViewController {
     
     // MARK: Methods
     
-    @objc func showNextAction() {
+    @objc private func showNextAction() {
         let nextViewController = ReaderViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
     }

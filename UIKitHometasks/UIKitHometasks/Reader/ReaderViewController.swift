@@ -10,17 +10,12 @@ import UIKit
 /// экран с "читалкой"
 final class ReaderViewController: UIViewController {
     
+    // MARK: Constant
+    
     private enum Constants {
         static let fontsArray = ["Verdana", "Optima", "Times New Roman"]
-    }
-    
-    private var currentFont = UIFont(name: "Verdana", size: 14)
-    
-    private let readerTextView: UITextView = {
-        let textView = UITextView()
-        textView.backgroundColor = .white
-        textView.text =
-        """
+        static let dayNightLabelText = "День/Ночь"
+        static let verseText = """
             Вы помните,
             Вы всё, конечно, помните,
             Как я стоял,
@@ -137,6 +132,18 @@ final class ReaderViewController: UIViewController {
             Знакомый ваш
             Сергей Есенин.
         """
+    }
+    
+    // MARK: private properties
+    
+    private var currentFont = UIFont(name: "Verdana", size: 14)
+    
+    // MARK: UI elements
+    
+    private let readerTextView: UITextView = {
+        let textView = UITextView()
+        textView.backgroundColor = .white
+        textView.text = Constants.verseText
         textView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         return textView
     }()
@@ -154,7 +161,7 @@ final class ReaderViewController: UIViewController {
         slider.maximumValue = 20
         slider.tintColor = .lightGray
         slider.maximumTrackTintColor = .darkGray
-        slider.addTarget(self, action: #selector(changeSlider), for: .valueChanged)
+        slider.addTarget(self, action: #selector(changeSliderAction), for: .valueChanged)
         return slider
     }()
     
@@ -169,7 +176,7 @@ final class ReaderViewController: UIViewController {
         let button = UIButton(frame: CGRect(x: 290, y: 730, width: 20, height: 20))
         button.layer.cornerRadius = 10
         button.backgroundColor = .darkGray
-        button.addTarget(self, action: #selector(changeColor(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(changeColorAction(sender:)), for: .touchUpInside)
         return button
     }()
     
@@ -177,7 +184,7 @@ final class ReaderViewController: UIViewController {
         let button = UIButton(frame: CGRect(x: 320, y: 730, width: 20, height: 20))
         button.layer.cornerRadius = 10
         button.backgroundColor = .lightGray
-        button.addTarget(self, action: #selector(changeColor(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(changeColorAction(sender:)), for: .touchUpInside)
         return button
     }()
     
@@ -185,7 +192,7 @@ final class ReaderViewController: UIViewController {
         let button = UIButton(frame: CGRect(x: 350, y: 730, width: 20, height: 20))
         button.layer.cornerRadius = 10
         button.backgroundColor = .red
-        button.addTarget(self, action: #selector(changeColor(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(changeColorAction(sender:)), for: .touchUpInside)
         return button
     }()
     
@@ -193,7 +200,7 @@ final class ReaderViewController: UIViewController {
         let button = UIButton(frame: CGRect(x: 380, y: 730, width: 20, height: 20))
         button.layer.cornerRadius = 10
         button.backgroundColor = .white
-        button.addTarget(self, action: #selector(changeColor(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(changeColorAction(sender:)), for: .touchUpInside)
         return button
     }()
     
@@ -222,7 +229,7 @@ final class ReaderViewController: UIViewController {
     
     private let dayNightLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 300, y: 765, width: 100, height: 20))
-        label.text = "Ночь/день"
+        label.text = Constants.dayNightLabelText
         label.textColor = .white
         return label
     }()
@@ -247,7 +254,7 @@ final class ReaderViewController: UIViewController {
     
     // MARK: Configuration UI
     
-    func configUI() {
+    private func configUI() {
         view.backgroundColor = .brown
         navigationController?.navigationBar.barTintColor = .brown
         navigationController?.navigationBar.tintColor = .white
@@ -273,12 +280,12 @@ final class ReaderViewController: UIViewController {
     
     // MARK: Methods
     
-    @objc func changeSlider() {
+    @objc private func changeSliderAction() {
         let valueOfSlider = sizeFontSlider.value
         readerTextView.font = UIFont.systemFont(ofSize: CGFloat(valueOfSlider))
     }
     
-    @objc func changeColor(sender: UIButton) {
+    @objc private func changeColorAction(sender: UIButton) {
         switch sender {
         case darkGreyColorButton:
             readerTextView.textColor = .darkGray
@@ -293,20 +300,16 @@ final class ReaderViewController: UIViewController {
         }
     }
     
-    @objc func boldFontAction() {
+    @objc private func boldFontAction() {
         readerTextView.font = currentFont?.bold
     }
     
-    @objc func thinFontAction() {
+    @objc private func thinFontAction() {
         readerTextView.font = currentFont
     }
     
-    @objc func dayNightAction(sender: UISwitch) {
-        if sender.isOn {
-            readerTextView.backgroundColor = .black
-        } else {
-            readerTextView.backgroundColor = .white
-        }
+    @objc private func dayNightAction(sender: UISwitch) {
+        readerTextView.backgroundColor = sender.isOn ? .black : .white
     }
 }
 
@@ -334,7 +337,7 @@ extension ReaderViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 // MARK: UIFont
-
+// Расширение для возможности применять методы, делающие любой шрифт жирным и полужирным
 extension UIFont {
     var bold: UIFont { return withWeight(.bold) }
     var semibold: UIFont { return withWeight(.semibold) }
