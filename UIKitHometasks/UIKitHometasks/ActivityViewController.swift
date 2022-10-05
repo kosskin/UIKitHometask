@@ -11,14 +11,14 @@ final class ActivityViewController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet private weak var buttonToOpenActivityVC: UIButton!
+    @IBOutlet private weak var buttonToOpenActivityButton: UIButton!
     @IBOutlet private weak var spanchImageView: UIImageView!
     @IBOutlet private weak var spanchButton: UIButton!
     
     // MARK: Private properties
     
     private var activityViewController: UIActivityViewController?
-    private var itemsArray = ["One", "Two", "Three", "Four"]
+    private var items = ["One", "Two", "Three", "Four"]
     private let facebook = FacebookShare()
     
     // MARK: UI elements
@@ -64,17 +64,17 @@ extension ActivityViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return itemsArray.count
+        return items.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let result = "\(itemsArray[row])"
+        let result = "\(items[row])"
         return result
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row == 2 {
-            openActivityVC(activityItems: itemsArray)
+            openActivityVC(activityItems: items)
         }
     }
 }
