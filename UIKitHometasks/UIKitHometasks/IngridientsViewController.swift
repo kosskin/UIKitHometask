@@ -8,7 +8,7 @@
 import UIKit
 
 // Протокол для перехода на экран с RootViewController
-protocol PopToRootVC: AnyObject {
+protocol PopToRootDelegate: AnyObject {
     func goToRootViewController()
 }
 
@@ -156,7 +156,7 @@ final class IngridientsViewController: UIViewController {
 }
 
 // расширение для перехода на экран выбора пицца/суши
-extension IngridientsViewController: PopToRootVC {
+extension IngridientsViewController: PopToRootDelegate {
     func goToRootViewController() {
         if let navigationViewControllerOne = self.presentingViewController as? UINavigationController {
             self.view.isHidden = true

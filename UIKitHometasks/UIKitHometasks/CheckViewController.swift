@@ -85,7 +85,7 @@ final class CheckViewController: UIViewController {
     
     // MARK: Public property
     
-    weak var delegate: PopToRootVC?
+    weak var delegate: PopToRootDelegate?
     
     // MARK: Life cycle
     

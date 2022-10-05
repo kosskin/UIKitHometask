@@ -6,11 +6,11 @@
 //
 import UIKit
 
-/// ViewController с полями входа (для ввода логина и пароля)
+/// экран с полями входа (для ввода логина и пароля)
 final class SignInViewController: UIViewController {
     
     // MARK: UI elements
-    private let cloudImage: UIImageView = {
+    private let cloudImageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 125, y: 80, width: 150, height: 70))
         imageView.image = UIImage(systemName: "cloud.fill")
         imageView.tintColor = .lightGray
@@ -74,7 +74,7 @@ final class SignInViewController: UIViewController {
     // MARK: Configuration UI
     func configUI() {
         view.backgroundColor = .white
-        view.addSubview(cloudImage)
+        view.addSubview(cloudImageView)
         view.addSubview(textOnCloudLabel)
         view.addSubview(emailLabel)
         view.addSubview(emailTextField)
