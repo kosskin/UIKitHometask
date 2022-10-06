@@ -7,15 +7,15 @@
 import UIKit
 
 /// экран регистрации
-class SignInViewController: UIViewController, UITextFieldDelegate {
+final class SignInViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: IBOutlets
     
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var repeatPasswordTextField: UITextField!
-    @IBOutlet weak var enterButton: UIButton!
-    @IBOutlet weak var haveAccountButton: UIButton!
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var repeatPasswordTextField: UITextField!
+    @IBOutlet private weak var enterButton: UIButton!
+    @IBOutlet private weak var haveAccountButton: UIButton!
     
     // MARK: Life cycle
     
@@ -55,7 +55,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: UITextFieldDelegate
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case loginTextField:
             loginTextField.resignFirstResponder()

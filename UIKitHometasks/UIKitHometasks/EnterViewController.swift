@@ -8,13 +8,22 @@
 import UIKit
 /// экран входа
 final class EnterViewController: UIViewController {
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    
+    // MARK: Outlets
+    
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
     
     private let defaults = UserDefaults.standard
     
+    // MARK: Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        defaultsSet()
+    }
+    
+    private func defaultsSet() {
         defaults.set(1, forKey: "email")
         defaults.set(1, forKey: "password")
     }
