@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB93C18E28ECBB120082D6B4 /* FootballPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93C18D28ECBB120082D6B4 /* FootballPlayerViewController.swift */; };
+		BB93C19128ECC1BD0082D6B4 /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93C19028ECC1BD0082D6B4 /* EnterViewController.swift */; };
 		BBD6075728DC7BD20047378A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075628DC7BD20047378A /* AppDelegate.swift */; };
 		BBD6075928DC7BD20047378A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075828DC7BD20047378A /* SceneDelegate.swift */; };
-		BBD6075B28DC7BD20047378A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075A28DC7BD20047378A /* ViewController.swift */; };
+		BBD6075B28DC7BD20047378A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075A28DC7BD20047378A /* SignInViewController.swift */; };
 		BBD6075E28DC7BD20047378A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD6075C28DC7BD20047378A /* Main.storyboard */; };
 		BBD6076028DC7BD40047378A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBD6075F28DC7BD40047378A /* Assets.xcassets */; };
 		BBD6076328DC7BD40047378A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD6076128DC7BD40047378A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB93C18D28ECBB120082D6B4 /* FootballPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballPlayerViewController.swift; sourceTree = "<group>"; };
+		BB93C19028ECC1BD0082D6B4 /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 		BBD6075328DC7BD20047378A /* UIKitHometasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHometasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD6075628DC7BD20047378A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBD6075828DC7BD20047378A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BBD6075A28DC7BD20047378A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BBD6075A28DC7BD20047378A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BBD6075D28DC7BD20047378A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBD6075F28DC7BD40047378A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBD6076228DC7BD40047378A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,8 +62,10 @@
 			children = (
 				BBD6075628DC7BD20047378A /* AppDelegate.swift */,
 				BBD6075828DC7BD20047378A /* SceneDelegate.swift */,
-				BBD6075A28DC7BD20047378A /* ViewController.swift */,
+				BBD6075A28DC7BD20047378A /* SignInViewController.swift */,
 				BBD6075C28DC7BD20047378A /* Main.storyboard */,
+				BB93C19028ECC1BD0082D6B4 /* EnterViewController.swift */,
+				BB93C18D28ECBB120082D6B4 /* FootballPlayerViewController.swift */,
 				BBD6075F28DC7BD40047378A /* Assets.xcassets */,
 				BBD6076128DC7BD40047378A /* LaunchScreen.storyboard */,
 				BBD6076428DC7BD40047378A /* Info.plist */,
@@ -159,7 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBD6075B28DC7BD20047378A /* ViewController.swift in Sources */,
+				BB93C19128ECC1BD0082D6B4 /* EnterViewController.swift in Sources */,
+				BB93C18E28ECBB120082D6B4 /* FootballPlayerViewController.swift in Sources */,
+				BBD6075B28DC7BD20047378A /* SignInViewController.swift in Sources */,
 				BBD6075728DC7BD20047378A /* AppDelegate.swift in Sources */,
 				BBD6075928DC7BD20047378A /* SceneDelegate.swift in Sources */,
 			);
