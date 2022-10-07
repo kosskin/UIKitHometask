@@ -63,14 +63,11 @@ final class ViewController: UIViewController {
         return ((seconds / 3600), ((seconds % 3600) / 60), ((seconds % 3600) % 60))
     }
     
-    private func makeTimeString(hours: Int, minutes: Int, seconds: Int) -> String {
-        var timeString = ""
-        timeString += String(format: "%02d", hours)
-        timeString += ":"
-        timeString += String(format: "%02d", minutes)
-        timeString += ":"
-        timeString += String(format: "%02d", seconds)
-        return timeString
+    private func format(timePart: Int) -> String {
+        return String(format: "%02d", timePart)
     }
     
+    private func makeTimeString(hours: Int, minutes: Int, seconds: Int) -> String {
+        return "\(format(timePart: hours)):\(format(timePart: minutes)):\(format(timePart: seconds))"
+    }
 }
