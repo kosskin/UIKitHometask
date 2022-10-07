@@ -11,9 +11,9 @@ final class ViewController: UIViewController {
 
     // MARK: IBoutlets
     
-    @IBOutlet weak var stopWatchLabel: UILabel!
-    @IBOutlet weak var startStopButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet private weak var stopWatchLabel: UILabel!
+    @IBOutlet private weak var startStopButton: UIButton!
+    @IBOutlet private weak var resetButton: UIButton!
     
     // MARK: Private properties
     
@@ -29,7 +29,7 @@ final class ViewController: UIViewController {
     
     // MARK: IBActions
     
-    @IBAction func resetAction(_ sender: UIButton) {
+    @IBAction private func resetAction(_ sender: UIButton) {
         timer.invalidate()
         plusTime = 0
         stopWatchLabel.text = makeTimeString(hours: 0, minutes: 0, seconds: 0)
@@ -37,7 +37,7 @@ final class ViewController: UIViewController {
 
     }
     
-    @IBAction func startStopAction(_ sender: UIButton) {
+    @IBAction private func startStopAction(_ sender: UIButton) {
         if isCounting {
             isCounting = false
             timer.invalidate()
