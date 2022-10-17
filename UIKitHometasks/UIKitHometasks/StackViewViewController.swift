@@ -12,7 +12,7 @@ final class StackViewViewController: UIViewController {
     
     // MARK: UI Elements
     
-    private lazy var rectangle = makeRectangle()
+    private lazy var rectangleView = makeRectangle()
     private lazy var lightsStackView = createStackView()
     
     // MARK: Life Cycle
@@ -26,7 +26,7 @@ final class StackViewViewController: UIViewController {
     
     private func configUI() {
         view.backgroundColor = .white
-        view.addSubview(rectangle)
+        view.addSubview(rectangleView)
         setUpRectangle()
         view.addSubview(lightsStackView)
         setUpStackView()
@@ -53,9 +53,9 @@ final class StackViewViewController: UIViewController {
     }
     
     private func setUpRectangle() {
-        rectangle.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        rectangle.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        rectangle.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.72).isActive = true
-        rectangle.widthAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.22).isActive = true
+        rectangleView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        rectangleView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        rectangleView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.72).isActive = true
+        rectangleView.widthAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.22).isActive = true
     }
 }

@@ -12,19 +12,15 @@ final class NSLayoutAnchorViewController: UIViewController {
     
     // MARK: UI Elements
     
-    private lazy var rectangle = makeRectangle()
-    private lazy var redSqare = makeSqare(color: UIColor.red)
-    private lazy var yellowSqare = makeSqare(color: UIColor.yellow)
-    private lazy var greenSqare = makeSqare(color: UIColor.green)
+    private lazy var rectangleView = makeRectangle()
+    private lazy var redSqareView = makeSqare(color: UIColor.red)
+    private lazy var yellowSqareView = makeSqare(color: UIColor.yellow)
+    private lazy var greenSqareView = makeSqare(color: UIColor.green)
 
     // MARK: Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        rectangle.addSubview(redSqare)
-        rectangle.addSubview(yellowSqare)
-        rectangle.addSubview(greenSqare)
-        view.addSubview(rectangle)
         configUI()
     }
     
@@ -32,39 +28,43 @@ final class NSLayoutAnchorViewController: UIViewController {
     
     private func configUI() {
         view.backgroundColor = .white
-        createYellowConstraint()
-        createRedConstraint()
-        createGreenConstraint()
-        createRectangleConstraint()
+        rectangleView.addSubview(redSqareView)
+        rectangleView.addSubview(yellowSqareView)
+        rectangleView.addSubview(greenSqareView)
+        view.addSubview(rectangleView)
+        createYellowConstraints()
+        createRedConstraints()
+        createGreenConstraints()
+        createRectangleConstraints()
     }
     
-    private func createYellowConstraint() {
-        yellowSqare.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        yellowSqare.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        yellowSqare.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
-        yellowSqare.widthAnchor.constraint(equalTo: yellowSqare.heightAnchor).isActive = true
+    private func createYellowConstraints() {
+        yellowSqareView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        yellowSqareView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        yellowSqareView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
+        yellowSqareView.widthAnchor.constraint(equalTo: yellowSqareView.heightAnchor).isActive = true
     }
     
-    private func createRedConstraint() {
-        redSqare.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        redSqare.centerYAnchor.anchorWithOffset(to: yellowSqare.centerYAnchor)
-            .constraint(equalTo: yellowSqare.heightAnchor, multiplier: 1.12).isActive = true
-        redSqare.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
-        redSqare.widthAnchor.constraint(equalTo: redSqare.heightAnchor).isActive = true
+    private func createRedConstraints() {
+        redSqareView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        redSqareView.centerYAnchor.anchorWithOffset(to: yellowSqareView.centerYAnchor)
+            .constraint(equalTo: yellowSqareView.heightAnchor, multiplier: 1.12).isActive = true
+        redSqareView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
+        redSqareView.widthAnchor.constraint(equalTo: redSqareView.heightAnchor).isActive = true
     }
     
-    private func createGreenConstraint() {
-        greenSqare.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        greenSqare.centerYAnchor.anchorWithOffset(to: yellowSqare.centerYAnchor)
-            .constraint(equalTo: yellowSqare.heightAnchor, multiplier: -1.12).isActive = true
-        greenSqare.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
-        greenSqare.widthAnchor.constraint(equalTo: greenSqare.heightAnchor).isActive = true
+    private func createGreenConstraints() {
+        greenSqareView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        greenSqareView.centerYAnchor.anchorWithOffset(to: yellowSqareView.centerYAnchor)
+            .constraint(equalTo: yellowSqareView.heightAnchor, multiplier: -1.12).isActive = true
+        greenSqareView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
+        greenSqareView.widthAnchor.constraint(equalTo: greenSqareView.heightAnchor).isActive = true
     }
     
-    private func createRectangleConstraint() {
-        rectangle.centerXAnchor.constraint(equalTo: yellowSqare.centerXAnchor).isActive = true
-        rectangle.centerYAnchor.constraint(equalTo: yellowSqare.centerYAnchor).isActive = true
-        rectangle.heightAnchor.constraint(equalTo: yellowSqare.heightAnchor, multiplier: 3.5).isActive = true
-        rectangle.widthAnchor.constraint(equalTo: yellowSqare.widthAnchor, multiplier: 1.25).isActive = true
+    private func createRectangleConstraints() {
+        rectangleView.centerXAnchor.constraint(equalTo: yellowSqareView.centerXAnchor).isActive = true
+        rectangleView.centerYAnchor.constraint(equalTo: yellowSqareView.centerYAnchor).isActive = true
+        rectangleView.heightAnchor.constraint(equalTo: yellowSqareView.heightAnchor, multiplier: 3.5).isActive = true
+        rectangleView.widthAnchor.constraint(equalTo: yellowSqareView.widthAnchor, multiplier: 1.25).isActive = true
     }
 }

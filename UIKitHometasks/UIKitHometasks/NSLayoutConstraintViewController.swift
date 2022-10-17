@@ -12,10 +12,10 @@ final class NSLayoutConstraintViewController: UIViewController {
     
     // MARK: UI Elements
     
-    private lazy var rectangle = makeRectangle()
-    private lazy var redSqare = makeSqare(color: UIColor.red)
-    private lazy var yellowSqare = makeSqare(color: UIColor.yellow)
-    private lazy var greenSqare = makeSqare(color: UIColor.green)
+    private lazy var rectangleView = makeRectangle()
+    private lazy var redSqareView = makeSqare(color: UIColor.red)
+    private lazy var yellowSqareView = makeSqare(color: UIColor.yellow)
+    private lazy var greenSqareView = makeSqare(color: UIColor.green)
 
     // MARK: Life Cycle
     
@@ -28,135 +28,135 @@ final class NSLayoutConstraintViewController: UIViewController {
     
     private func configUI() {
         view.backgroundColor = .white
-        rectangle.addSubview(redSqare)
-        rectangle.addSubview(yellowSqare)
-        rectangle.addSubview(greenSqare)
-        view.addSubview(rectangle)
-        createYellowSqareConstraint()
-        createRedSqareConstraint()
-        createGreenSqareConstraint()
-        createRectangleConstraint()
+        rectangleView.addSubview(redSqareView)
+        rectangleView.addSubview(yellowSqareView)
+        rectangleView.addSubview(greenSqareView)
+        view.addSubview(rectangleView)
+        createYellowSqareConstraints()
+        createRedSqareConstraints()
+        createGreenSqareConstraints()
+        createRectangleConstraints()
     }
     
-    private func createYellowSqareConstraint() {
-        NSLayoutConstraint(item: yellowSqare,
+    private func createYellowSqareConstraints() {
+        NSLayoutConstraint(item: yellowSqareView,
                            attribute: .centerX,
                            relatedBy: .equal,
                            toItem: view,
                            attribute: .centerX,
                            multiplier: 1,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: yellowSqare,
+        NSLayoutConstraint(item: yellowSqareView,
                            attribute: .centerY,
                            relatedBy: .equal,
                            toItem: view,
                            attribute: .centerY,
                            multiplier: 1,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: yellowSqare,
+        NSLayoutConstraint(item: yellowSqareView,
                            attribute: .height,
                            relatedBy: .equal,
                            toItem: view,
                            attribute: .height,
                            multiplier: 0.25,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: yellowSqare,
+        NSLayoutConstraint(item: yellowSqareView,
                            attribute: .width,
                            relatedBy: .equal,
-                           toItem: yellowSqare,
+                           toItem: yellowSqareView,
                            attribute: .height,
                            multiplier: 1,
                            constant: 0).isActive = true
     }
     
-    private func createRedSqareConstraint() {
-        NSLayoutConstraint(item: redSqare,
+    private func createRedSqareConstraints() {
+        NSLayoutConstraint(item: redSqareView,
                            attribute: .centerX,
                            relatedBy: .equal,
                            toItem: view,
                            attribute: .centerX,
                            multiplier: 1,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: redSqare,
+        NSLayoutConstraint(item: redSqareView,
                            attribute: .centerY,
                            relatedBy: .equal,
-                           toItem: yellowSqare,
+                           toItem: yellowSqareView,
                            attribute: .centerY,
                            multiplier: 0.35,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: redSqare,
+        NSLayoutConstraint(item: redSqareView,
                            attribute: .height,
                            relatedBy: .equal,
                            toItem: view,
                            attribute: .height,
                            multiplier: 0.25,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: redSqare,
+        NSLayoutConstraint(item: redSqareView,
                            attribute: .width,
                            relatedBy: .equal,
-                           toItem: redSqare,
+                           toItem: redSqareView,
                            attribute: .height,
                            multiplier: 1,
                            constant: 0).isActive = true
     }
     
-    private func createGreenSqareConstraint() {
-        NSLayoutConstraint(item: greenSqare,
+    private func createGreenSqareConstraints() {
+        NSLayoutConstraint(item: greenSqareView,
                            attribute: .centerX,
                            relatedBy: .equal,
                            toItem: view,
                            attribute: .centerX,
                            multiplier: 1,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: greenSqare,
+        NSLayoutConstraint(item: greenSqareView,
                            attribute: .centerY,
                            relatedBy: .equal,
-                           toItem: yellowSqare,
+                           toItem: yellowSqareView,
                            attribute: .centerY,
                            multiplier: 1.65,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: greenSqare,
+        NSLayoutConstraint(item: greenSqareView,
                            attribute: .height,
                            relatedBy: .equal,
                            toItem: view,
                            attribute: .height,
                            multiplier: 0.25,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: greenSqare,
+        NSLayoutConstraint(item: greenSqareView,
                            attribute: .width,
                            relatedBy: .equal,
-                           toItem: redSqare,
+                           toItem: redSqareView,
                            attribute: .height,
                            multiplier: 1,
                            constant: 0).isActive = true
     }
     
-    private func createRectangleConstraint() {
-        NSLayoutConstraint(item: rectangle,
+    private func createRectangleConstraints() {
+        NSLayoutConstraint(item: rectangleView,
                            attribute: .centerX,
                            relatedBy: .equal,
-                           toItem: yellowSqare,
+                           toItem: yellowSqareView,
                            attribute: .centerX,
                            multiplier: 1,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: rectangle,
+        NSLayoutConstraint(item: rectangleView,
                            attribute: .centerY,
                            relatedBy: .equal,
-                           toItem: yellowSqare,
+                           toItem: yellowSqareView,
                            attribute: .centerY,
                            multiplier: 1,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: rectangle,
+        NSLayoutConstraint(item: rectangleView,
                            attribute: .height,
                            relatedBy: .equal,
-                           toItem: yellowSqare,
+                           toItem: yellowSqareView,
                            attribute: .height,
                            multiplier: 3.5,
                            constant: 0).isActive = true
-        NSLayoutConstraint(item: rectangle,
+        NSLayoutConstraint(item: rectangleView,
                            attribute: .width,
                            relatedBy: .equal,
-                           toItem: yellowSqare,
+                           toItem: yellowSqareView,
                            attribute: .width,
                            multiplier: 1.25,
                            constant: 0).isActive = true
