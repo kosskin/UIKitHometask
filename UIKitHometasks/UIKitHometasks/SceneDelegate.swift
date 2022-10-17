@@ -17,14 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         //let layoutConstraintViewController = NSLayoutConstraintViewController()
-        //let layuotAnchorViewController = NSLayoutAnchorViewController()
-        //let visualFormatLanguageViewController = VisualFormalLanguageViewController()
-        let stackViewViewController = StackViewViewController()
+        let layuotAnchorViewController = NSLayoutAnchorViewController()
+        //let stackViewViewController = StackViewViewController()
         window = UIWindow(windowScene: scene)
         //window?.rootViewController = layoutConstraintViewController
-        //window?.rootViewController = layuotAnchorViewController
-        //window?.rootViewController = visualFormatLanguageViewController
-        window?.rootViewController = stackViewViewController
+        window?.rootViewController = layuotAnchorViewController
+        //window?.rootViewController = stackViewViewController
         window?.makeKeyAndVisible()
     }
 
