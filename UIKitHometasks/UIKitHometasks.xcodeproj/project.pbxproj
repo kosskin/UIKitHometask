@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB11C62B28FBE784009FD202 /* NSLayoutConstraintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11C62A28FBE784009FD202 /* NSLayoutConstraintViewController.swift */; };
+		BB11C62E28FC1B4C009FD202 /* NSLayoutAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11C62D28FC1B4C009FD202 /* NSLayoutAnchorViewController.swift */; };
+		BB11C63128FC1C84009FD202 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11C63028FC1C84009FD202 /* UIViewController+Extension.swift */; };
+		BB331EF428FC4633003EAF13 /* VisualFormalLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB331EF328FC4633003EAF13 /* VisualFormalLanguageViewController.swift */; };
+		BB331EF728FC7F2C003EAF13 /* StackViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB331EF628FC7F2C003EAF13 /* StackViewViewController.swift */; };
 		BBD6075728DC7BD20047378A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075628DC7BD20047378A /* AppDelegate.swift */; };
 		BBD6075928DC7BD20047378A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075828DC7BD20047378A /* SceneDelegate.swift */; };
 		BBD6075B28DC7BD20047378A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD6075A28DC7BD20047378A /* ViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB11C62A28FBE784009FD202 /* NSLayoutConstraintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintViewController.swift; sourceTree = "<group>"; };
+		BB11C62D28FC1B4C009FD202 /* NSLayoutAnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutAnchorViewController.swift; sourceTree = "<group>"; };
+		BB11C63028FC1C84009FD202 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		BB331EF328FC4633003EAF13 /* VisualFormalLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualFormalLanguageViewController.swift; sourceTree = "<group>"; };
+		BB331EF628FC7F2C003EAF13 /* StackViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewViewController.swift; sourceTree = "<group>"; };
 		BBD6075328DC7BD20047378A /* UIKitHometasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitHometasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD6075628DC7BD20047378A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBD6075828DC7BD20047378A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +70,11 @@
 				BBD6075828DC7BD20047378A /* SceneDelegate.swift */,
 				BBD6075A28DC7BD20047378A /* ViewController.swift */,
 				BBD6075C28DC7BD20047378A /* Main.storyboard */,
+				BB11C63028FC1C84009FD202 /* UIViewController+Extension.swift */,
+				BB331EF328FC4633003EAF13 /* VisualFormalLanguageViewController.swift */,
+				BB331EF628FC7F2C003EAF13 /* StackViewViewController.swift */,
+				BB11C62A28FBE784009FD202 /* NSLayoutConstraintViewController.swift */,
+				BB11C62D28FC1B4C009FD202 /* NSLayoutAnchorViewController.swift */,
 				BBD6075F28DC7BD40047378A /* Assets.xcassets */,
 				BBD6076128DC7BD40047378A /* LaunchScreen.storyboard */,
 				BBD6076428DC7BD40047378A /* Info.plist */,
@@ -159,6 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB331EF728FC7F2C003EAF13 /* StackViewViewController.swift in Sources */,
+				BB11C63128FC1C84009FD202 /* UIViewController+Extension.swift in Sources */,
+				BB11C62B28FBE784009FD202 /* NSLayoutConstraintViewController.swift in Sources */,
+				BB331EF428FC4633003EAF13 /* VisualFormalLanguageViewController.swift in Sources */,
+				BB11C62E28FC1B4C009FD202 /* NSLayoutAnchorViewController.swift in Sources */,
 				BBD6075B28DC7BD20047378A /* ViewController.swift in Sources */,
 				BBD6075728DC7BD20047378A /* AppDelegate.swift in Sources */,
 				BBD6075928DC7BD20047378A /* SceneDelegate.swift in Sources */,
